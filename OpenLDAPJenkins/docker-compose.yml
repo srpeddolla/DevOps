@@ -1,0 +1,34 @@
+version: '3'
+services:
+  openldap:
+    image: osixia/openldap
+    container_name: openldap
+    hostname: ldap
+    environment:
+      - LDAP_ORGANISATION=srpeddolla
+      - LDAP_DOMAIN=srpeddolla.com
+      - LDAP_ADMIN_PASSWORD=we1c0me123
+    volumes:
+      - /root/openldap/database:/var/lib/ldap
+      - /root/openldap/config:/etc/ldap/slapd.d
+    ports:
+      - "389:389"
+      - "636:636"
+    networks:
+      - mynetwork
+
+  phpldapadmin:
+    image: osixia/phpldapadmin
+    container_name: phpldapadmin
+    hostname: phpldapadmin
+    environment:
+      - PHPLDAPADMIN_HTTPS=false
+      - PHPLDAPADMIN_LDAP_HOSTS=openldap
+    ports:
+      - "6443:443"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
