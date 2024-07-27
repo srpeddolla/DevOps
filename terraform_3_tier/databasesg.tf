@@ -21,5 +21,4 @@ resource "aws_security_group" "dbsg" {
     tags = {
         name = "dbsg"
     }
-
 }
