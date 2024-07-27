@@ -21,4 +21,8 @@ resource "aws_security_group" "dbsg" {
     tags = {
         name = "dbsg"
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 253c946886f50633ca6dae85941059457d76d2a2
 }
