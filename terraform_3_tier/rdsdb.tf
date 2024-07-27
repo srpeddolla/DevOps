@@ -8,6 +8,7 @@ resource "aws_db_instance" "rdsdb" {
   multi_az = true
   username = "srpeddollas"
   password = "srpeddollas123"
+  skip_final_snapshot = true
   #parameter_group_name = "default.mysql5.7"
   vpc_security_group_ids = [aws_security_group.mysg.id]
 }
