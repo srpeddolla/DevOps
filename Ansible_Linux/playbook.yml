@@ -1,0 +1,9 @@
+# Ansible playbook
+# Author: Shashidhar
+# Date: 20/Aug/2024
+---
+- name: Playbook
+  hosts: localhost
+  tasks:
+  - name: Test Connectivity
+    ping:
