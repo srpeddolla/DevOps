@@ -1,0 +1,20 @@
+# Ansible playbook practice from scratch.
+# Author: Shashidhar
+# Date: 20/Aug/2024
+
+---
+
+- name: Install and Start the service
+  hosts: localhost
+
+  tasks:
+  - name: Installing nginx
+    apt:
+      name: nginx
+      state: present
+  - name: Starting the nginx service
+    service:
+      name: nginx
+      state: started
+      enabled: true
+      

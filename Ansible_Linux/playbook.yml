@@ -1,4 +1,4 @@
-# Ansible playbook
+# Ansible playbook practice from scratch.
 # Author: Shashidhar
 # Date: 20/Aug/2024
 ---
@@ -7,3 +7,5 @@
   tasks:
   - name: Test Connectivity
     ping:
+  - name: "Print Output"
+    debug: msg="Message is correct"
