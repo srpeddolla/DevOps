@@ -3,7 +3,7 @@
 # Date: 20/Aug/2024
 ---
 - name: Playbook
-  hosts: localhost
+  hosts: all
   tasks:
   - name: Test Connectivity
     ping:
