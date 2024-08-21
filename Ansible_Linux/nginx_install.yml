@@ -10,6 +10,7 @@
   tasks:
   - name: Installing nginx
     apt:
+    yum:
       name: nginx
       state: present
   - name: Starting the nginx service
