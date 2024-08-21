@@ -6,13 +6,19 @@
 
 - name: Install and Start the service
   hosts: all
+  become: yes
 
   tasks:
-  - name: Installing nginx
+  - name: Installing nginx on Ubuntu
     apt:
+      name: nginx
+      state: present
+
+  - name: Installing nginx on Centos/RHEL
     yum:
       name: nginx
       state: present
+      
   - name: Starting the nginx service
     service:
       name: nginx
