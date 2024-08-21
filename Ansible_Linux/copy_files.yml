@@ -1,0 +1,11 @@
+---
+
+- name: Copying files to the remote machine
+  hosts: all
+
+  tasks:
+  - name: Copy Files
+    copy:
+      src: /root/myfile.txt
+      dest: /tmp/
+
